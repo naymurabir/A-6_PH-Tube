@@ -15,7 +15,7 @@ const displayVideosCatagories = (videosCatagories) => {
         const categoryDiv = document.createElement('div')
         categoryDiv.classList.add("text-black", "font-semibold", "rounded-sm", "hover:bg-gray-200");
         categoryDiv.innerHTML = `
-        <a onclick ="handleLoadVideosCards('${category.category_id}')" class="tab text-black font-semibold bg-gray-200 rounded "> ${category.category} </a>
+        <a onclick ="handleLoadVideosCards('${category.category_id}')" class="tab text-black font-semibold bg-gray-300 rounded hover:bg-gray-200"> ${category.category} </a>
         `
         categoriesContainer.appendChild(categoryDiv)
     });
@@ -46,7 +46,7 @@ const handleDisplayVideosCards = (videosCards) => {
         const emptyDiv = document.createElement('div')
         emptyDiv.classList = `flex justify-center items-center flex-col`
         emptyDiv.innerHTML = `
-        <img class="w-40 mt-16" src="./images/Icon.png" alt="alternative-text">
+        <img class="w-40 mt-12" src="./images/Icon.png" alt="alternative-text">
         <h2 class="text-2xl font-medium mt-3"> Oops!! Sorry, There is no content here </h2>
         `
         emptyContainer.appendChild(emptyDiv)
@@ -62,7 +62,7 @@ const handleDisplayVideosCards = (videosCards) => {
                         </figure>
                         <div>
 
-                            <div class="flex px-5 py-2 gap-5 ">
+                            <div class="flex px-0 py-2 gap-5 ">
 
                                 <div>
 
@@ -73,24 +73,23 @@ const handleDisplayVideosCards = (videosCards) => {
                                 <div>
 
                                     <h3 class="font-bold text-sm"> ${cards.title} </h3>
-                                    <div class="flex items-center gap-2">
+                                    <div class="flex items-center gap-1">
                                         <h3 class="my-2"> ${cards?.authors[0].profile_name} </h3>
                                         
                                         <h3> ${(cards.authors[0].verified) ?
-                `<i class="fa-solid fa-circle-check text-green-600 text-2xl"></i>` : ''} </h3> 
+                `<img src= "./images/verify.png" alt="" /> ` : ''} </h3> 
                                     </div >
                 <h4> ${cards.others.views} views</h4>
 
                                 </div >
                             </div >
                         </div >
-                        
+
                `
         cardsContainer.appendChild(cardDiv)
     });
 
 }
-
 
 handleLoadVideosCards('1000')
 handleLoadCatagories()
