@@ -15,7 +15,7 @@ const displayVideosCatagories = (videosCatagories) => {
         const categoryDiv = document.createElement('div')
         categoryDiv.classList.add("text-black", "font-semibold", "rounded-sm", "hover:bg-gray-200");
         categoryDiv.innerHTML = `
-        <a onclick ="handleLoadVideosCards('${category.category_id}')" class="tab text-black font-semibold bg-gray-300 rounded hover:bg-gray-200"> ${category.category} </a>
+        <a onclick ="handleLoadVideosCards('${category.category_id}')" class="tab text-black font-semibold bg-gray-300 rounded hover:bg-[#FF1F3D]"> ${category.category} </a>
         `
         categoriesContainer.appendChild(categoryDiv)
     });
@@ -115,7 +115,6 @@ document.getElementById('sort-button').addEventListener('click', function () {
     handleDisplayVideosCards(sortingButton)
 
 })
-
 
 handleLoadVideosCards('1000')
 handleLoadCatagories()
