@@ -1,40 +1,104 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
 
-    <!-- Libraries Components -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog</title>
 
-  <body>
-    <header></header>
-    <main>
-      <section class="max-w-screen-xl mx-auto my-10 px-8 md:px-16 lg:px-24">
-        <h1 class="text-center text-xl text-black font-semibold mb-4">
-          1. Discuss the scope of var, let, and const
-        </h1>
-        <div class="bg-green-100 rounded-md px-5 py-5">
-          <h1 class="text-xl font-semibold">Var:</h1>
-          <p class="text-base">
-            Basically variable declared with var is both function scope & and
-            global scope. That means we can access them before they are declared
-            in our code. If a var variable is declared outside of any function,
-            it becomes a global variable and accessible throughout our entire
-            code. Possible to reassign and update.
-          </p>
-        </div>
-      </section>
-    </main>
+  <!-- Libraries Components -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
 
-    <!-- Script -->
-    <script src="js/index.js"></script>
-  </body>
+<body>
+  <header>
+    <section class="max-w-screen-xl mx-auto my-10 px-8 md:px-16 lg:px-24">
+      <div class="text-center flex justify-center items-center gap-4">
+        <img src="./images/Logo.png" alt="logo">
+        <h3 class="text-white text-2xl font-bold bg-[#FF1F3D] px-2 py-1 rounded-xl">Blogs</h3>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section class="max-w-screen-xl mx-auto my-10 px-8 md:px-16 lg:px-24">
+      <!-- Var, let, Const -->
+      <h1 class="text-center text-xl text-black font-semibold mb-4 bg-red-100 px-4 py-3 rounded-md">
+        1. Discuss the scope of var, let, and const
+      </h1>
+      <!-- Var -->
+      <div class="bg-green-100 rounded-md px-5 py-5">
+        <h1 class="text-xl font-semibold">Var:</h1>
+        <p class="text-base">
+          Basically variable declared with var is both function scope & and
+          global scope. That means we can access them before they are declared
+          in our code. If a var variable is declared outside of any function,
+          it becomes a global variable and accessible throughout our entire
+          code. Possible to reassign and update.
+        </p>
+      </div>
+      <!-- Let -->
+      <div class="bg-green-100 rounded-md px-5 py-5 mt-2">
+        <h1 class="text-xl font-semibold">Let:</h1>
+        <p class="text-base">
+          Mainly let variables have block scope. They are only accessible within the block. If we declare let within a
+          function, let variables are limited to that function's scope.
+
+          Variables declared with let can be reassigned new values within their scope. This means we can change the
+          value of a let variable as many times as we want within it's block.
+        </p>
+      </div>
+      <!-- Const -->
+      <div class="bg-green-100 rounded-md px-5 py-5 mt-2">
+        <h1 class="text-xl font-semibold">Const:</h1>
+        <p class="text-base">
+          const variables are also block-scoped, this means they are only accessible within the block of code where they
+          are defined. It cannot be reassigned to a different value within the same scope.
+        </p>
+      </div>
+
+      <!-- Null, Undefined -->
+      <h1 class="text-center text-xl text-black font-semibold mb-4 bg-red-100 px-4 py-3 mt-4 rounded-md">
+        2. Tell us the use cases of null and undefined
+      </h1>
+      <!-- Null -->
+      <div class="bg-green-100 rounded-md px-5 py-5 mt-2">
+        <h1 class="text-xl font-semibold">Null:</h1>
+        <p class="text-base">
+          null represents an empty or missing value in many programming languages, including JavaScript. It's used to
+          signify the absence of an object or a variable that should have a value but does not have value.
+        </p>
+      </div>
+      <!-- Undefined -->
+      <div class="bg-green-100 rounded-md px-5 py-5 mt-2">
+        <h1 class="text-xl font-semibold">Undefined:</h1>
+        <p class="text-base">
+          undefined is a special value in JavaScript that represents the absence of a defined value. When trying to
+          access an object property that does not exist, then undefined occurs. When a function
+          does not return a value explicitly, it returns undefined by default.
+        </p>
+      </div>
+
+      <!--  REST API -->
+      <h1 class="text-center text-xl text-black font-semibold mb-4 bg-red-100 px-4 py-3 rounded-md mt-3">
+        3. What do you mean by REST API?
+      </h1>
+      <!-- Undefined -->
+      <div class="bg-green-100 rounded-md px-5 py-5 mt-2">
+        <h1 class="text-xl font-semibold">API:</h1>
+        <p class="text-base">
+          Basically API is the bridge of communication between different software components, enabling them to interact
+          and exchange data with each other. For example if we order something in a restaurant where a waiter take
+          orders from us and go to the kitchen and bring our ordered items for us. Here the waiter is like an API. Here
+          the client and server are separate entities that communicate over a network.
+        </p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Script -->
+  <script src="js/index.js"></script>
+</body>
+
 </html>
