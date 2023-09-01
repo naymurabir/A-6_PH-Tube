@@ -53,13 +53,28 @@ const handleDisplayVideosCards = (videosCards) => {
     }
 
     videosCards.forEach(cards => {
+        // -----------------------
+        const { thumbnail, title, authors, others } = cards;
+        let hrs;
+        let min;
+        if (others.posted_date) {
+            // console.log('On posted Data');
+            hrs = Math.floor(others.posted_date / 360)
+            min = Math.floor((others.posted_date % 360) / 60)
+        } else {
+
+        }
+        console.log(hrs, min);
+        // --------------------------
         const cardDiv = document.createElement('div')
         cardDiv.classList = `card bg-base-100 shadow-xl`
         cardDiv.innerHTML = `
     
-                    <figure><img class="h-[200px] w-full" src="${cards.thumbnail}" alt="Videos" />
+                    <div class="relative">
+                         <img class="h-[200px] w-full" src="${thumbnail}" alt="Videos" />
+                         <h2> ${others.posted_date ? `<h3 class=" bg-black px-2 py-1 text-white rounded-lg absolute bottom-2 right-2"> Hrs ${hrs} Min ${min} </h3>` : ""} </h2>
 
-                        </figure>
+                        </div>
                         <div>
 
                             <div class="flex px-0 py-2 gap-5 ">
@@ -72,9 +87,9 @@ const handleDisplayVideosCards = (videosCards) => {
                                 </div>
                                 <div>
 
-                                    <h3 class="font-bold text-sm"> ${cards.title} </h3>
+                                    <h3 class="font-bold text-sm"> ${title} </h3>
                                     <div class="flex items-center gap-1">
-                                        <h3 class="my-2"> ${cards?.authors[0].profile_name} </h3>
+                                        <h3 class="my-2"> ${authors[0].profile_name} </h3>
                                         
                                         <h3> ${(cards.authors[0].verified) ?
                 `<img src= "./images/verify.png" alt="" /> ` : ''} </h3> 
