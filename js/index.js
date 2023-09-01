@@ -71,7 +71,7 @@ const handleDisplayVideosCards = (videosCards) => {
     
                     <div class="relative">
                          <img class="h-[200px] w-full" src="${thumbnail}" alt="Videos" />
-                         <h2> ${others.posted_date ? `<h3 class=" bg-black px-2 py-1 text-white rounded-lg absolute bottom-2 right-2"> Hrs ${hrs} Min ${min} ago </h3>` : ""} </h2>
+                         <h2> ${others.posted_date ? `<h3 class=" bg-black px-2 py-1 text-white rounded-lg absolute bottom-2 right-2"> ${hrs} Hrs ${min} Min ago </h3>` : ""} </h2>
                          
                          </div>
                         
