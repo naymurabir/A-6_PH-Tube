@@ -11,7 +11,7 @@ const handleLoadCatagories = async () => {
 const displayVideosCatagories = (videosCatagories) => {
     const categoriesContainer = document.getElementById('catagories-container')
     videosCatagories.forEach(category => {
-        console.log(category);
+        // console.log(category);
         const categoryDiv = document.createElement('div')
         categoryDiv.classList.add("text-black", "font-semibold", "rounded-sm", "hover:bg-gray-200");
         categoryDiv.innerHTML = `
@@ -64,28 +64,26 @@ const handleDisplayVideosCards = (videosCards) => {
         } else {
 
         }
-        console.log(hrs, min);
+        // console.log(hrs, min);
         const cardDiv = document.createElement('div')
         cardDiv.classList = `card bg-base-100 shadow-xl`
         cardDiv.innerHTML = `
     
                     <div class="relative">
                          <img class="h-[200px] w-full" src="${thumbnail}" alt="Videos" />
-                         <h2> ${others.posted_date ? `<h3 class=" bg-black px-2 py-1 text-white rounded-lg absolute bottom-2 right-2"> Hrs ${hrs} Min ${min} </h3>` : ""} </h2>
-
-                        </div>
+                         <h2> ${others.posted_date ? `<h3 class=" bg-black px-2 py-1 text-white rounded-lg absolute bottom-2 right-2"> Hrs ${hrs} Min ${min} ago </h3>` : ""} </h2>
+                         
+                         </div>
+                        
                         <div>
 
                             <div class="flex px-0 py-2 gap-5 ">
-
                                 <div>
-
-                                    <img class="w-10 h-10 rounded-full"
+                                   <img class="w-10 h-10 rounded-full"
                                     src=" ${cards?.authors[0].profile_picture} " alt="">
-
                                 </div>
-                                <div>
 
+                                <div>
                                     <h3 class="font-bold text-sm"> ${title} </h3>
                                     <div class="flex items-center gap-1">
                                         <h3 class="my-2"> ${authors[0].profile_name} </h3>
@@ -94,7 +92,6 @@ const handleDisplayVideosCards = (videosCards) => {
                 `<img src= "./images/verify.png" alt="" /> ` : ''} </h3> 
                                     </div >
                 <h4> ${cards.others.views} views</h4>
-
                                 </div >
                             </div >
                         </div >
@@ -111,7 +108,7 @@ document.getElementById('sort-button').addEventListener('click', function () {
         // console.log(parseFloat(a.others.views.slice(0, -1)));
         const x = parseFloat(a.others.views.slice(0, -1))
         const y = parseFloat(b.others.views.slice(0, -1))
-        console.log(x, y);
+        // console.log(x, y);
         return y - x;
     })
 
