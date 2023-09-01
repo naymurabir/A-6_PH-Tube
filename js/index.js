@@ -116,6 +116,11 @@ document.getElementById('sort-button').addEventListener('click', function () {
 
 })
 
+// Handle Blog Page
+document.getElementById('blog-btn').addEventListener('click', function () {
+    window.location.href = "blog.html"
+})
+
 handleLoadVideosCards('1000')
 handleLoadCatagories()
 
