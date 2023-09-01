@@ -24,12 +24,13 @@ const displayVideosCatagories = (videosCatagories) => {
 
 
 // Load Videos Cards from API using ID's
+let sortButton;
 const handleLoadVideosCards = async (videosId) => {
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${videosId}`)
     const data = await response.json()
-    const videosCards = data.data
+    sortButton = data.data
     // console.log(videosCards);
-    handleDisplayVideosCards(videosCards)
+    handleDisplayVideosCards(sortButton)
 }
 
 
@@ -53,7 +54,6 @@ const handleDisplayVideosCards = (videosCards) => {
     }
 
     videosCards.forEach(cards => {
-        // -----------------------
         const { thumbnail, title, authors, others } = cards;
         let hrs;
         let min;
@@ -65,7 +65,6 @@ const handleDisplayVideosCards = (videosCards) => {
 
         }
         console.log(hrs, min);
-        // --------------------------
         const cardDiv = document.createElement('div')
         cardDiv.classList = `card bg-base-100 shadow-xl`
         cardDiv.innerHTML = `
@@ -105,6 +104,20 @@ const handleDisplayVideosCards = (videosCards) => {
     });
 
 }
+
+// Handle Sort By Button
+document.getElementById('sort-button').addEventListener('click', function () {
+    const sortingButton = sortButton.sort((a, b) => {
+        // console.log(parseFloat(a.others.views.slice(0, -1)));
+        const x = parseFloat(a.others.views.slice(0, -1))
+        const y = parseFloat(b.others.views.slice(0, -1))
+        console.log(x, y);
+        return y - x;
+    })
+
+    handleDisplayVideosCards(sortingButton)
+
+})
 
 
 handleLoadVideosCards('1000')
