@@ -93,3 +93,4 @@ const handleDisplayVideosCards = (videosCards) => {
 
 handleLoadVideosCards('1000')
 handleLoadCatagories()
+
