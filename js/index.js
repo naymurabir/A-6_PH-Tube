@@ -59,8 +59,8 @@ const handleDisplayVideosCards = (videosCards) => {
         let min;
         if (others.posted_date) {
             // console.log('On posted Data');
-            hrs = Math.floor(others.posted_date / 360)
-            min = Math.floor((others.posted_date % 360) / 60)
+            hrs = Math.floor(others.posted_date / 3600) % 24
+            min = Math.floor((others.posted_date % 3600) / 60)
         } else {
 
         }
