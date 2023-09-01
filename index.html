@@ -18,23 +18,37 @@
     <header>
         <!-- Navbar -->
         <section class="max-w-screen-xl mx-auto my-5 px-8 md:px-16 lg:px-24">
-            <div class="flex justify-between items-center">
-                <div>
-                    <img src="./images/ph-tube-logo.png" alt="">
+
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <label tabindex="0" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </label>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+
+                        </ul>
+                    </div>
+                    <img class="hidden lg:block" src="./images/ph-tube-logo.png" alt="">
                 </div>
 
-                <div>
-                    <button
-                        class="bg-gray-300 px-3 py-1 text-black font-semibold rounded-sm hover:bg-gray-200 hidden lg:block">Sort
+                <div class="navbar-center lg:flex">
+
+                    <button class="bg-gray-300 px-3 py-1 text-black font-semibold rounded-sm hover:bg-gray-200 ">Sort
                         By View</button>
 
                 </div>
-
-                <div>
+                <div class="navbar-end">
                     <button
                         class="bg-[#FF1F3D] px-3 py-1 text-white font-semibold rounded-sm hover:bg-red-300">Blog</button>
                 </div>
             </div>
+
         </section>
     </header>
     <main>
