@@ -105,10 +105,8 @@ const handleDisplayVideosCards = (videosCards) => {
 // Handle Sort By Button
 document.getElementById('sort-button').addEventListener('click', function () {
     const sortingButton = sortButton.sort((a, b) => {
-        // console.log(parseFloat(a.others.views.slice(0, -1)));
         const x = parseFloat(a.others.views.slice(0, -1))
         const y = parseFloat(b.others.views.slice(0, -1))
-        // console.log(x, y);
         return y - x;
     })
 
